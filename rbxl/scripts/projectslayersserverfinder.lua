@@ -1,5 +1,5 @@
 if game.PlaceId ~= 6152116144 then
-    game.Players.LocalPlayer:Kick("Wrong Game")
+    game.Players.LocalPlayer:Kick("Wrong Game | Join Main Game")
 else
     print("Ok")
 end
