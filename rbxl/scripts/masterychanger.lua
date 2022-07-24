@@ -1,4 +1,4 @@
-game:Players.LocalPlayer:Kick("You've been banned for being retarded LOL")
+game.Players.LocalPlayer:Kick("You've been banned for being retarded LOL")
 
 local gmt = getrawmetatable(game)
 
