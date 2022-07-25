@@ -19,7 +19,7 @@ local supported_games = {
 if supported_games[game.PlaceId] then
     pcall(function() supported_games[game.PlaceId].Function() end)
     local d
-    local f = pcall(function() d = game:HttpGet("your github link"..game.PlaceId..".lua") end)
+    local f = pcall(function() d = game:HttpGet("https://raw.githubusercontent.com/muzscripter/projects/main/muz.wtf/scripts/"..game.PlaceId..".lua") end)
     if f == true then
         loadstring(d)()
     end
