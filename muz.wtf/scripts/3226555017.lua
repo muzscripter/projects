@@ -22,10 +22,13 @@ local Watermark = Framework:CreateWatermark("muz.wtf | {game} | {fps}")
 local WriteLine  = Framework:CreateWindow("SCP: Site Roleplay", Vector2.new(600, 400), Enum.KeyCode.RightControl)
 local General = WriteLine:CreateTab("Main Tab")
 local server = WriteLine:CreateTab("Server")
+local web = WriteLine:CreateTab("Webhooks")
 local creds = WriteLine:CreateTab("Credits")
 local Main = General:CreateSector("Main", "left")
 local cred = creds:CreateSector("Credits", "left")
 local serv = server:CreateSector("Server", "left")
+local serv2 = server:CreateSector("Other", "left")
+local web1 = web:CreateSector("Web Hooks", "left")
 
 -- // Services
 local Players = game:GetService("Players")
@@ -39,9 +42,9 @@ local misc = General:CreateSector("Misc", "left")
 local tele = General:CreateSector("Teleports", "right")
 local oth = General:CreateSector("Other", "right")
 
-oth:AddToggle("Fly - C", false, function(x)
+oth:AddToggle("Fly / Float", false, function(x)
 
-    getgenv().Flying = x
+    getgenv().flying_state = x 
 
     local CoreGui = game:GetService("StarterGui")
 
@@ -53,7 +56,7 @@ local function keydown(key)
     return game:GetService("UserInputService"):IsKeyDown(key)
 end
 
-while getgenv().Flying == true do
+while getgenv().flying_state == true do
     local move = game.Players.LocalPlayer.Character.Humanoid.MoveDirection * 10 * 4
     if keydown(Enum.KeyCode.Space) then
         game.Players.LocalPlayer.Character.Humanoid.RootPart.Velocity = Vector3.new(0,55,0) + move
@@ -161,7 +164,7 @@ tele:AddDropdown("Area Selection", places, "Select Area", false, function(x)
     getgenv().wantedplace = x
 end)
 
-tele:AddButton("Teleport [High Ban-Risk]", function()
+tele:AddButton("Teleport [High Ban-Risk 99%]", function()
 
     local CoreGui = game:GetService("StarterGui")
 
@@ -316,8 +319,9 @@ serv:AddButton("Server Hop", function()
     module:Teleport(game.PlaceId)
 end)
 
-cred:AddButton("Press to join discord", function()
-pcall(function()
+local function DiscordInviter(DiscordCode)
+
+    pcall(function()
         local JSONEncode, JSONDecode, GenerateGUID = game.HttpService.JSONEncode, game.HttpService.JSONDecode,
             game.HttpService.GenerateGUID
         local Request = syn and syn.request or request
@@ -331,10 +335,148 @@ pcall(function()
             Body = JSONEncode(game.HttpService, {
                 cmd = "INVITE_BROWSER",
                 args = {
-                    code = fKuzp8YDmT
+                    code = DiscordCode
                 },
                 nonce = GenerateGUID(game.HttpService, false)
             })
         })
     end)
+end
+
+cred:AddButton("Press to join discord", function()
+    pcall(function()
+        DiscordInviter("fKuzp8YDmT")
+    end)
 end)
+
+local admins = {
+    "Visceraled",
+    "AdministratedAdmin",
+    "XahnChronoktus",
+    "BananDev",
+    "shadow9487",
+    "NotReallyGordon",
+    "Mr_Achromatic413",
+    "brandon15212",
+    "LuxGoats",
+    "Sedona92",
+    "Operator682",
+    "ThetaFive",
+    "KINGMIKE3271",
+    "friedmacaronibacon",
+    "Brog0",
+    "PhantomLuisYT",
+    "Im_ZuRaFa",
+    "Maxtheazazel12",
+    "CharbiIe",
+    "fishyfishfoshy",
+    "Kxliol",
+    "JKnubz",
+    "Forthcordian",
+    "PsiMage74",
+}
+serv2:AddToggle("Detect If Admin Joins", false, function(x)
+    getgenv().admin_detection = x
+end)
+
+
+        
+        
+
+
+web1:AddTextbox("Webhook Here", false, function(x)
+    getgenv().webhook = x
+end)
+
+web1:AddToggle("Webhook Toggle", false, function(y)
+    getgenv().use_webhook = y
+end)
+
+web1:AddTextbox("Discord User-ID", false, function(x)
+    getgenv().userid = x
+end)
+
+web1:AddButton("Test Webhook", function()
+    if getgenv().use_webhook then
+    msg = {
+            ["content"] = "<@!"..getgenv().userid..">",
+            ["embeds"] = {{
+                    ["color"] = 000000,
+                    ["description"] = "testing webhook (enabled)",
+                    ["author"] = {
+                        ["name"] = "muz.wtf | webhook"
+                    }
+            }}
+        }
+
+        local response =
+        syn.request({
+            Url = getgenv().webhook,
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json"
+
+            },
+            Body = game:GetService("HttpService"):JSONEncode(msg)
+        })
+    else
+        msg = {
+            ["content"] = "<@!"..getgenv().userid..">",
+            ["embeds"] = {{
+                    ["color"] = 000000,
+                    ["description"] = "testing webhook (disabled)",
+                    ["author"] = {
+                        ["name"] = "muz.wtf | webhook"
+                    }
+            }}
+        }
+
+        local response =
+        syn.request({
+            Url = getgenv().webhook,
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json"
+
+            },
+            Body = game:GetService("HttpService"):JSONEncode(msg)
+        })
+    end
+end)
+
+
+game.Players.PlayerAdded:Connect(function(plr)
+    if getgenv().admin_detection and table.find(admins, plr.Name) then
+        if getgenv().use_webhook then
+             msg = {
+            ["content"] = "<@!"..getgenv().userid..">",
+            ["embeds"] = {{
+                    ["color"] = 000000,
+                    ["description"] = "You have been kicked, administrator joined.",
+                    ["author"] = {
+                        ["name"] = "muz.wtf | webhook"
+                    }
+            }}
+        }
+
+        local response =
+        syn.request({
+            Url = getgenv().webhook,
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json"
+
+            },
+            Body = game:GetService("HttpService"):JSONEncode(msg)
+        })
+            
+        game.Players.LocalPlayer:Kick("Admin Joined")
+        else
+            game.Players.LocalPlayer:Kick("Admin Joined")
+        end
+    end
+end)
+
+
+
+
