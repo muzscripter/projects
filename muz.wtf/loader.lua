@@ -1,10 +1,22 @@
-repeat wait() until game:IsLoaded()
+local client = game.Players.LocalPlayer
+
+if getgenv().access_key == loadstring(game:HttpGet("https://raw.githubusercontent.com/muzscripter/projects/main/muz.wtf/access_key", true))() then
+    print("Key is succesful")
+else
+    game.Players.LocalPlayer:Kick("Wrong key join the discord server | https://discord.gg/fKuzp8YDmT")
+end
 
 
-local blacklsited_users = {
-    'kaos7789',
-    'RealKaos_Alt'
+
+local blacklisted_users = {
+    ['kaos7789'] = true, 
 }
+
+if blacklisted_users[game.Players.LocalPlayer.Name] then 
+    game.Players.LocalPlayer:Kick("Blacklisted from using our scripts")
+end
+
+repeat wait() until game:IsLoaded()
 
 local supported_games = {
     [3226555017] = {
@@ -13,7 +25,36 @@ local supported_games = {
             local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
             print(GameName .. " Script Loaded")
         end
+    },
+    [3226555017] = {
+        ["Name"] = "Project Slayers",
+        ["Function"] = function()
+            local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+            print(GameName .. " Script Loaded")
+        end
+    },
+    [5780309044] = {
+        ["Name"] = "Stand Awakening",
+        ["Function"] = function()
+            local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+            print(GameName .. " Script Loaded")
+        end
+    },
+    [5780309044] = {
+        ["Name"] = "A Universal Time",
+        ["Function"] = function()
+            local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+            print(GameName .. " Script Loaded")
+        end
+    },
+    [5780309044] = {
+        ["Name"] = "A Sakura Stand",
+        ["Function"] = function()
+            local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+            print(GameName .. " Script Loaded")
+        end
     }
+
 }
 
 if supported_games[game.PlaceId] then
