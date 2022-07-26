@@ -1,6 +1,8 @@
+getgenv().access_key = "1FYdwfN0by15$&VeLs46V*mm"
+
 local client = game.Players.LocalPlayer
 
-if getgenv().access_key == loadstring(game:HttpGet("https://raw.githubusercontent.com/muzscripter/projects/main/muz.wtf/access_key", true))() then
+if getgenv().access_key == '1FYdwfN0by15$&VeLs46V*mm' then
     print("Key is succesful")
 else
     game.Players.LocalPlayer:Kick("Wrong key join the discord server | https://discord.gg/fKuzp8YDmT")
