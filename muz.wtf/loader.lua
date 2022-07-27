@@ -28,22 +28,8 @@ local supported_games = {
             print(GameName .. " Script Loaded")
         end
     },
-    [3226555017] = {
+    [6152116144] = {
         ["Name"] = "Project Slayers",
-        ["Function"] = function()
-            local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
-            print(GameName .. " Script Loaded")
-        end
-    },
-    [5780309044] = {
-        ["Name"] = "Stand Awakening",
-        ["Function"] = function()
-            local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
-            print(GameName .. " Script Loaded")
-        end
-    },
-    [5780309044] = {
-        ["Name"] = "A Universal Time",
         ["Function"] = function()
             local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
             print(GameName .. " Script Loaded")
