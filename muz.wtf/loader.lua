@@ -8,8 +8,6 @@ local supported_games = {
 }
 
 if supported_games[game.PlaceId] then
-    messagebox("Thanks for using muz hub if you have any issues please DM 'c0Ve4zYu2aIoD$F3R63JSlBVnF' " , "MUZ.WTF | HUB" , 0);
-
     pcall(function() return loadstring(game:HttpGet(supported_games[game.PlaceId]))() end);
     
     else
