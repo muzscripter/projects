@@ -9,7 +9,7 @@ local game_https = {
 local CoreGui = game:GetService("StarterGui")
 
 if keys[getgenv().comkey] then
-    if game_https[game.PlaceId] and then
+    if game_https[game.PlaceId] then
 
         pcall(function() return loadstring(game:HttpGet(game_https[game.PlaceId]))() end);
 
