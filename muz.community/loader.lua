@@ -1,7 +1,3 @@
-getgenv().settings = {
-  ['Key'] = "1iLliLLLi_10X@0+##)@"
-}
-
 local game_tables = loadstring(game:HttpGet("https://raw.githubusercontent.com/muzscripter/projects/main/muz.community/games.lua"))();
 loadstring(game:HttpGet("https://raw.githubusercontent.com/muzscripter/projects/main/muz.community/systems.lua"))();
 
@@ -18,7 +14,7 @@ end
 local key_file = "muz_community.txt"
 
 function saveKey()
-if (writefile) then
+if (writefile) and getgenv().settings.Key ~= nil then
     local json;
     local http = game:GetService("HttpService")
     json = http:JSONEncode(tostring(getgenv().settings.Key))
