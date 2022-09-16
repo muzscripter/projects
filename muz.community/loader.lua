@@ -1,30 +1,65 @@
-local _keys = {
-    ["release"] = false,
-    ["1iLliLLLi_10X@0+##)@"] = true
+getgenv().settings = {
+  ['Key'] = "1iLliLLLi_10X@0+##)@"
 }
 
-local game_https = {
-    [6152116144] = "https://raw.githubusercontent.com/muzscripter/projects/main/muz.community/scripts/projectslayers.lua";
+local game_tables = loadstring(game:HttpGet("https://raw.githubusercontent.com/muzscripter/projects/main/muz.community/games.lua"))();
+loadstring(game:HttpGet("https://raw.githubusercontent.com/muzscripter/projects/main/muz.community/systems.lua"))();
+
+if not game_tables[game.PlaceId] then
+  return Notify('Warning', 'Game isnt supported', 5)
+end
+
+  local _keys = {
+  ["release"] = false,
+  ["1iLliLLLi_10X@0+##)@"] = true
 }
 
-local function _checkKey()
-    if _keys[comkey] then
-        return true
+
+local key_file = "muz_community.txt"
+
+function saveKey()
+if (writefile) then
+    local json;
+    local http = game:GetService("HttpService")
+    json = http:JSONEncode(tostring(getgenv().settings.Key))
+
+    local success, err = pcall(function()
+      writefile(key_file, json)
+    end)
+    
+    if success then
+      Notify('Notification', 'Succesfully saved key to workspace', 1)
+      print('Key : ' .. tostring(getgenv().settings.Key))
     else
-        return false
+      Notify('Notification', 'Failed to save key', 1)
     end
+  end
 end
 
+saveKey()
 
-function check_key()
-    if _checkKey() == true then
-        pcall(function() return loadstring(game:HttpGet(game_https[game.PlaceId]))() end);
-    elseif _checkKey() == false then
-        game.Players.LocalPlayer:Kick("Wrong key or game isn't supported join the discord ") 
+wait(1)
 
-        CoreGui:SetCore("SendNotification", {Title = "muz.community"; Text = "Join the discord server | https://discord.gg/QBdvJ5QymP"; Duration = 60; Button1 = "Ok"; })
-    end
+
+if (readfile and isfile and isfile(key_file)) then
+  wait(1)
+      
+  local key;
+
+  local sus, err = pcall(function()
+    key = readfile(key_file)
+  end)
+  
+  if sus and _keys[key:gsub('"', '')] then
+    Notify('Key', 'Found saved key', 5)
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/muzscripter/projects/main/muz.community/intro.lua'))()
+    
+  else
+    Notify('Key', 'No previous key found or old key isnt valid.', 5)
+  end
+  
+  elseif _keys[settings.Key] then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/muzscripter/projects/main/muz.community/intro.lua'))()
+  else
+    Notify('Key', 'Wrong Key', 5)
 end
-
-check_key()
-
