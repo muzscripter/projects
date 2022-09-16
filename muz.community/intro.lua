@@ -1,3 +1,5 @@
+local game_tables = loadstring(game:HttpGet("https://raw.githubusercontent.com/muzscripter/projects/main/muz.community/games.lua"))();
+
 local muzcom = Instance.new("ScreenGui")
 local mainframe = Instance.new("Frame")
 local UIGradient = Instance.new("UIGradient")
@@ -165,9 +167,7 @@ local function DJBLX_fake_script() -- Execute.Script
 
             script.Parent.Parent:Destroy()
 
-            loadstring(
-                game:HttpGet("https://raw.githubusercontent.com/muzscripter/projects/main/muz.community/loader.lua")
-            )()
+            pcall(function() return loadstring(game:HttpGet(game_tables[game.PlaceId]))() end);)
         end
     )
 end
