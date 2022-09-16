@@ -167,7 +167,7 @@ local function DJBLX_fake_script() -- Execute.Script
 
             script.Parent.Parent:Destroy()
 
-            pcall(function() return loadstring(game:HttpGet(game_tables[game.PlaceId]))() end);)
+            pcall(function() return loadstring(game:HttpGet(game_tables[game.PlaceId]))() end)
         end
     )
 end
