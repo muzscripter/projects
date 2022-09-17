@@ -1,6 +1,11 @@
 local game_tables = loadstring(game:HttpGet("https://raw.githubusercontent.com/muzscripter/projects/main/muz.community/games.lua"))();
 
-local muzcom = Instance.new("ScreenGui")
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local muzdojo = Instance.new("ScreenGui")
 local mainframe = Instance.new("Frame")
 local UIGradient = Instance.new("UIGradient")
 local UICorner = Instance.new("UICorner")
@@ -19,23 +24,19 @@ local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 
 --Properties:
 
-muzcom.Name = "muz.com"
-muzcom.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-muzcom.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+muzdojo.Name = "muz.dojo"
+muzdojo.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+muzdojo.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 mainframe.Name = "mainframe"
-mainframe.Parent = muzcom
+mainframe.Parent = muzdojo
 mainframe.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 mainframe.BackgroundTransparency = 0.350
 mainframe.BorderSizePixel = 0
 mainframe.Position = UDim2.new(0.215266526, 0, 0.220318228, 0)
 mainframe.Size = UDim2.new(0, 750, 0, 456)
 
-UIGradient.Color =
-    ColorSequence.new {
-    ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)),
-    ColorSequenceKeypoint.new(1.00, Color3.fromRGB(59, 65, 59))
-}
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(234, 116, 207)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(232, 255, 232))}
 UIGradient.Parent = mainframe
 
 UICorner.Parent = mainframe
@@ -46,7 +47,7 @@ TextLabel.BackgroundTransparency = 1.000
 TextLabel.Position = UDim2.new(0.366666675, 0, 0.100877196, 0)
 TextLabel.Size = UDim2.new(0, 200, 0, 50)
 TextLabel.Font = Enum.Font.Nunito
-TextLabel.Text = "MUZ.COM"
+TextLabel.Text = "MUZ.DOJO"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextSize = 30.000
 
@@ -62,12 +63,12 @@ TextLabel_2.TextSize = 30.000
 
 Execute.Name = "Execute"
 Execute.Parent = mainframe
-Execute.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Execute.BackgroundColor3 = Color3.fromRGB(233, 239, 255)
 Execute.Position = UDim2.new(0.0813333318, 0, 0.804824591, 0)
 Execute.Size = UDim2.new(0, 629, 0, 50)
 Execute.Font = Enum.Font.Highway
 Execute.Text = "EXECUTE"
-Execute.TextColor3 = Color3.fromRGB(140, 140, 140)
+Execute.TextColor3 = Color3.fromRGB(255, 255, 255)
 Execute.TextSize = 44.000
 
 UICorner_2.Parent = Execute
@@ -77,7 +78,7 @@ ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ImageLabel.BackgroundTransparency = 1.000
 ImageLabel.Size = UDim2.new(0, 629, 0, 50)
 ImageLabel.Image = "http://www.roblox.com/asset/?id=4491416742"
-ImageLabel.ImageTransparency = 0.600
+ImageLabel.ImageTransparency = 0.900
 
 UICorner_3.Parent = ImageLabel
 
@@ -131,104 +132,89 @@ group_2.Image = "rbxassetid://3926305904"
 group_2.ImageRectOffset = Vector2.new(4, 844)
 group_2.ImageRectSize = Vector2.new(36, 36)
 
-UIAspectRatioConstraint.Parent = muzcom
+UIAspectRatioConstraint.Parent = muzdojo
 UIAspectRatioConstraint.AspectRatio = 1.988
 
 -- Scripts:
 
-local function DJBLX_fake_script() -- Execute.Script
-    local script = Instance.new("Script", Execute)
+local function IIJYIYC_fake_script() -- Execute.Script 
+	local script = Instance.new('Script', Execute)
 
-    script.Parent.MouseButton1Click:Connect(
-        function()
-            local TweenService = game:GetService("TweenService")
-            local time = 2
-            local tween = TweenService:Create(script.Parent.Parent, TweenInfo.new(time), {Transparency = 1})
-
-            tween:Play()
-
-            for i, v in pairs(script.Parent.Parent:GetChildren()) do
-                if v:IsA("ImageButton") then
-                    local TweenService = game:GetService("TweenService")
-                    local time = 2
-                    local tween = TweenService:Create(v, TweenInfo.new(time), {ImageTransparency = 1})
-
-                    tween:Play()
-                elseif v:IsA("TextLabel") then
-                    local TweenService = game:GetService("TweenService")
-                    local time = 2
-                    local tween = TweenService:Create(v, TweenInfo.new(time), {TextTransparency = 1})
-
-                    tween:Play()
-                end
-            end
-
-            wait(1.7)
-
-            script.Parent.Parent:Destroy()
-
-            pcall(function() return loadstring(game:HttpGet(game_tables[game.PlaceId]))() end)
-        end
-    )
+	script.Parent.MouseButton1Click:Connect(function()
+		
+		local TweenService = game:GetService("TweenService")
+		local time = 2
+		local tween = TweenService:Create(script.Parent.Parent, TweenInfo.new(time), {Transparency = 1})
+	
+		tween:Play()
+		
+		for i,v in pairs(script.Parent.Parent:GetChildren()) do
+			if v:IsA("ImageButton") then
+					local TweenService = game:GetService("TweenService")
+					local time = 2
+					local tween = TweenService:Create(v, TweenInfo.new(time), {ImageTransparency = 1})
+	
+				tween:Play()
+			elseif v:IsA("TextLabel") then
+				local TweenService = game:GetService("TweenService")
+				local time = 2
+				local tween = TweenService:Create(v, TweenInfo.new(time), {TextTransparency = 1})
+	
+				tween:Play()
+			end
+		end
+		
+			
+		wait(1.7)
+		
+		
+		script.Parent.Parent:Destroy()
+		
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/muzscripter/projects/main/muz.community/loader.lua"))()
+	end)
 end
-coroutine.wrap(DJBLX_fake_script)()
-local function ZODFLRR_fake_script() -- mainframe.Dragify
-    local script = Instance.new("LocalScript", mainframe)
+coroutine.wrap(IIJYIYC_fake_script)()
+local function OPNXJ_fake_script() -- mainframe.Dragify 
+	local script = Instance.new('LocalScript', mainframe)
 
-    local UIS = game:GetService("UserInputService")
-    function dragify(Frame)
-        dragToggle = nil
-        local dragSpeed = 0
-        dragInput = nil
-        dragStart = nil
-        local dragPos = nil
-        function updateInput(input)
-            local Delta = input.Position - dragStart
-            local Position =
-                UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-            game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.25), {Position = Position}):Play()
-        end
-        Frame.InputBegan:Connect(
-            function(input)
-                if
-                    (input.UserInputType == Enum.UserInputType.MouseButton1 or
-                        input.UserInputType == Enum.UserInputType.Touch) and
-                        UIS:GetFocusedTextBox() == nil
-                 then
-                    dragToggle = true
-                    dragStart = input.Position
-                    startPos = Frame.Position
-                    input.Changed:Connect(
-                        function()
-                            if input.UserInputState == Enum.UserInputState.End then
-                                dragToggle = false
-                            end
-                        end
-                    )
-                end
-            end
-        )
-        Frame.InputChanged:Connect(
-            function(input)
-                if
-                    input.UserInputType == Enum.UserInputType.MouseMovement or
-                        input.UserInputType == Enum.UserInputType.Touch
-                 then
-                    dragInput = input
-                end
-            end
-        )
-        game:GetService("UserInputService").InputChanged:Connect(
-            function(input)
-                if input == dragInput and dragToggle then
-                    updateInput(input)
-                end
-            end
-        )
-    end
-
-    dragify(script.Parent)
+	local UIS = game:GetService("UserInputService")
+	function dragify(Frame)
+	    dragToggle = nil
+	    local dragSpeed = 0
+	    dragInput = nil
+	    dragStart = nil
+	    local dragPos = nil
+	    function updateInput(input)
+	        local Delta = input.Position - dragStart
+	        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+	        game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.25), {Position = Position}):Play()
+	    end
+	    Frame.InputBegan:Connect(function(input)
+	        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
+	            dragToggle = true
+	            dragStart = input.Position
+	            startPos = Frame.Position
+	            input.Changed:Connect(function()
+	                if input.UserInputState == Enum.UserInputState.End then
+	                    dragToggle = false
+	                end
+	            end)
+	        end
+	    end)
+	    Frame.InputChanged:Connect(function(input)
+	        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+	            dragInput = input
+	        end
+	    end)
+	    game:GetService("UserInputService").InputChanged:Connect(function(input)
+	        if input == dragInput and dragToggle then
+	            updateInput(input)
+	        end
+	    end)
+	end
+	
+	dragify(script.Parent)
 end
-coroutine.wrap(ZODFLRR_fake_script)()
+coroutine.wrap(OPNXJ_fake_script)()
 
-syn.protect_gui(muzcom)
+syn.protect_gui(muzdojo)
