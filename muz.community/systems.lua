@@ -25,7 +25,7 @@ function Notify(xTitle,xText,xDuration)
   
   Line.Name = "Line"
   Line.Parent = Main
-  Line.BackgroundColor3 = Color3.fromRGB(0, 123, 255)
+  Line.BackgroundColor3 = Color3.fromRGB(245, 158, 167)
   Line.BorderSizePixel = 0
   Line.Size = UDim2.new(0, 3, 0, 50)
   
@@ -82,3 +82,5 @@ function Notify(xTitle,xText,xDuration)
       Notification:Destroy()
   end)
 end
+
+pcall(function() syn.protect_gui(Notification) end)
