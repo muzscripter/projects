@@ -172,7 +172,7 @@ local function IIJYIYC_fake_script() -- Execute.Script
 		script.Parent.Parent:Destroy()
 		
 		pcall(function() return loadstring(game:HttpGet(game_tables[game.PlaceId]))() end);
-		Notify("Script Notification","Attempting to execute script",5)
+		Notify("MUZ.DOJO | Notification","Attempting to execute script",5)
 	end)
 end
 coroutine.wrap(IIJYIYC_fake_script)()
