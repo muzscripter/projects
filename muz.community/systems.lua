@@ -75,9 +75,9 @@ function Notify(xTitle,xText,xDuration)
   end
   
   spawn(function()
-      Main:TweenPosition(UDim2.new(0.15,-200,0.85,80))
+      Main:TweenPosition(UDim2.new(0.15,-280,0.85,80))
       wait(xDuration)
-      Main:TweenPosition(UDim2.new(-0.23,-200,0.85,80))
+      Main:TweenPosition(UDim2.new(-0.23,-280,0.85,80))
       wait(1)
       Notification:Destroy()
   end)
