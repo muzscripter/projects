@@ -1,4 +1,5 @@
 local game_tables = loadstring(game:HttpGet("https://raw.githubusercontent.com/muzscripter/projects/main/muz.community/games.lua"))();
+loadstring(game:HttpGet("https://raw.githubusercontent.com/muzscripter/projects/main/muz.community/systems.lua"))();
 
 -- Gui to Lua
 -- Version: 3.2
@@ -170,7 +171,8 @@ local function IIJYIYC_fake_script() -- Execute.Script
 		
 		script.Parent.Parent:Destroy()
 		
-		pcall(function() return loadstring(game:HttpGet(game_https[game.PlaceId]))() end);
+		pcall(function() return loadstring(game:HttpGet(game_tables[game.PlaceId]))() end);
+		Notify("Script Notification","Attempting to execute script",5)
 	end)
 end
 coroutine.wrap(IIJYIYC_fake_script)()
