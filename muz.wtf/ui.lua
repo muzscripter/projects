@@ -1471,3 +1471,4 @@ local Shadow_3 = Instance.new("ImageLabel")
         end
         return Tabs
 end
+return Library
