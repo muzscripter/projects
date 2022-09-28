@@ -1473,7 +1473,3 @@ local Shadow_3 = Instance.new("ImageLabel")
         return Tabs
 end
 return Library
-
-pcall(function()
-	syn.protect_gui(motherFrame)
-end)
