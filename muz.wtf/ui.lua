@@ -1043,6 +1043,9 @@ local Shadow_3 = Instance.new("ImageLabel")
                       if check() then
                         local oldSliderDef = math.clamp(Int.Text, Min, Max) or math.clamp(50, Min, Max)
                         local oldDefaultScale =  (oldSliderDef - Min) / (Max - Min)
+                        pcall(function()
+                            Callback(Int.Text)
+                        end)
                         TweenService:Create(bar, TweenInfo.new(0.15), {Size = UDim2.fromScale(oldDefaultScale, 1)}):Play()
                       end
                 end  
