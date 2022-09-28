@@ -852,9 +852,10 @@ local Shadow_3 = Instance.new("ImageLabel")
                 Tracker.Name = "Tracker"
                 Tracker.Parent = Toggle
                 Tracker.AnchorPoint = Vector2.new(0.5, 0.5)
-                Tracker.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+                Tracker.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
                 Tracker.Position = UDim2.new(0.966216207, 0, 0.5, 0)
                 Tracker.Size = UDim2.new(0, 20, 1, -11)
+                Tracker.BackgroundTransparency = 0
 
                 UICorner_2.CornerRadius = UDim.new(0, 3)
                 UICorner_2.Parent = Tracker
@@ -897,43 +898,43 @@ local Shadow_3 = Instance.new("ImageLabel")
                 UIPadding.Parent = Title
                 UIPadding.PaddingLeft = UDim.new(0, 7)
 
-                Info = TweenInfo.new(.25)
+                
+                local State = TDefault
                 if TDefault then
-                    pcall(function()
-                        Callback(TDefault)
-                    end)
-                    TweenService:Create(check,Info,{ Rotation = 0 }):Play()
-                    TweenService:Create(Tracker,Info,{ BackgroundColor3 = Color3.fromRGB(255, 182, 193) }):Play() 
-                    TweenService:Create(Shadow,Info,{ ImageTransparency = 0 }):Play()
-
+                   State = true
                 else
-                    pcall(function()
-                        Callback(TDefault)
-                    end)
-                     TweenService:Create(check,Info,{ Rotation = 90 }):Play()
-                     TweenService:Create(Tracker,Info,{ BackgroundColor3 = Color3.fromRGB(40, 40, 40) }):Play() 
-                     TweenService:Create(Shadow,Info,{ ImageTransparency = 1 }):Play()
+                   State = false
                 end
-                Toggled = false
-                ToggleButton.MouseButton1Click:Connect(function()
-                    Toggled = not Toggled 
-                    if Toggled == true then
-                        pcall(function()
-                            Callback(false)
-                        end)
-                        TweenService:Create(check,Info, { Rotation = 90 }):Play()
-                        TweenService:Create(Tracker,Info,{ BackgroundColor3 = Color3.fromRGB(40, 40, 40) }):Play() 
-                        TweenService:Create(Shadow,Info,{ ImageTransparency = 1 }):Play()
-                    elseif Toggled == false then
-                        pcall(function()
-                            Callback(true)
-                        end)
-                        TweenService:Create(check,Info, { Rotation = 0 }):Play()
-                        TweenService:Create(Tracker,Info,{ BackgroundColor3 = Color3.fromRGB(255, 182, 193) }):Play() 
-                        TweenService:Create(Shadow,Info,{ ImageTransparency = 0 }):Play()
-
+                if TDefault then
+                    pcall(Callback, State)
+                    check.Rotation = 0 
+                    Tracker.BackgroundColor3 = Color3.fromRGB(255,182,193)
+                    Shadow.ImageTransparency = 0
+                        State = true
+                    else
+                        pcall(Callback, State)
+                        check.Rotation = 100
+                        Shadow.ImageTransparency =1
+                    check.ImageTransparency = 1
+                State = false
                         end
-                    end)
+             
+                        function Toggle()
+                            State = not State
+                            pcall(Callback, State)
+        
+                            local NewColour = State and Color3.fromRGB(255,182,193)  or Color3.fromRGB(40,40,40) 
+                            local NewTrans = State and 0 or 90 
+                            local NewImage  = State and 0 or 1 
+                            TweenService:Create(Shadow,TweenInfo.new(.25), { ImageTransparency = NewImage }):Play()
+                            local alpha =  TweenService:Create(check, TweenInfo.new(.25), {Rotation = NewTrans})
+                            alpha:Play()
+                            task.wait()
+                             local   delta = TweenService:Create(Tracker,TweenInfo.new(.25), { BackgroundColor3 = NewColour})
+                            delta:Play()
+                        end
+                        check.MouseButton1Click:Connect(Toggle)
+                        ToggleButton.MouseButton1Click:Connect(Toggle)
             end
             function Elements:Slider(settings)
                settings = settings or {}
@@ -1472,3 +1473,7 @@ local Shadow_3 = Instance.new("ImageLabel")
         return Tabs
 end
 return Library
+
+pcall(function()
+	syn.protect_gui(motherFrame)
+end)
