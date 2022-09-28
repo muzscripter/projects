@@ -915,8 +915,7 @@ local Shadow_3 = Instance.new("ImageLabel")
                         pcall(Callback, State)
                         check.Rotation = 100
                         Shadow.ImageTransparency =1
-                    check.ImageTransparency = 1
-                State = false
+                        State = false
                         end
              
                         function Toggle()
@@ -1472,4 +1471,5 @@ local Shadow_3 = Instance.new("ImageLabel")
         end
         return Tabs
 end
+
 return Library
