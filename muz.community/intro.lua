@@ -219,4 +219,3 @@ local function OPNXJ_fake_script() -- mainframe.Dragify
 end
 coroutine.wrap(OPNXJ_fake_script)()
 
-syn.protect_gui(muzdojo)
