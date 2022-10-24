@@ -1,11 +1,11 @@
 local client = game.Players.LocalPlayer;
+local functions = functions or {};
 
-
-function respawn()
+function functions.respawn()
     game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
 end;
 
-function create_baseplate()
+function functions.create_baseplate()
     local baseplate = Instance.new("Part", workspace)
     baseplate.Name = "88299sdmjk902150320k"
     baseplate.Size = Vector3.new(1000, 1, 1000)
@@ -16,7 +16,7 @@ function create_baseplate()
     baseplate.Transparency = 0
 end;
 
-function destroy_baseplate()
+function functions.destroy_baseplate()
     for _, v in pairs(workspace:GetChildren()) do
         if v.Name == "88299sdmjk902150320k" then
             v:Destroy()
@@ -24,18 +24,25 @@ function destroy_baseplate()
     end
 end;
 
+functions.destroy_baseplate()
+
+
 spawn(function()
     while task.wait() do
         if getgenv().settings.ticket_farm == true then
             pcall(function()
                 if not workspace:FindFirstChild("88299sdmjk902150320k") then
-                    create_baseplate()
+                    functions.create_baseplate()
                 end
+            end)
+            
+            pcall(function()
+            client.Character.HumanoidRootPart.CFrame = CFrame.new(500, -497, 500)
             end)
 
 
             if client:GetAttribute('InMenu') == true then
-                respawn()
+                functions.respawn()
             else
                 for i,v in pairs(game:GetService("Workspace").Game.Effects.Tickets:GetChildren()) do
                     if v:FindFirstChild("HumanoidRootPart") then
@@ -48,23 +55,5 @@ spawn(function()
                 end
             end
         end
-    end
-end)
-
-task.spawn(function()
-    while task.wait() do
-        if getgenv().settings.ticket_farm then
-            pcall(function()
-                client.Character.HumanoidRootPart.CFrame = CFrame.new(500, -500, 500)
-            end)
-        end
-    end
-end)
-
-spawn(function()
-    if client:GetAttribute("Downed") == true and settings.ticket_farm then
-        repeat task.wait()
-            respawn()
-        until not client:GetAttribute("Downed") == true
     end
 end)
