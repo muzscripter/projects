@@ -42,6 +42,7 @@ spawn(function()
                         repeat task.wait()
                             pcall(function()
                                 client.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
+                                wait(1)
                             end)
                         until not v:FindFirstChild("HumanoidRootPart") or not getgenv().settings.ticket_farm
                     end
@@ -61,7 +62,7 @@ task.spawn(function()
     end
 end)
 
-task.spawn(function()
+spawn(function()
     if client:GetAttribute("Downed") == true and settings.ticket_farm then
         repeat task.wait()
             respawn()
