@@ -41,7 +41,9 @@ spawn(function()
                     if v:FindFirstChild("HumanoidRootPart") then
                         repeat task.wait()
                             pcall(function()
+                                wait(1)
                                 client.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
+                                wait(1)
                             end)
                         until not v:FindFirstChild("HumanoidRootPart") or not getgenv().settings.ticket_farm
                     end
