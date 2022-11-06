@@ -11,7 +11,7 @@ end
 }
 
 
-local key_file = "muz_community.txt"
+local key_file = "muzkeyfree.txt"
 
 function saveKey()
 if (writefile) and getgenv().settings.Key ~= nil then
@@ -48,14 +48,14 @@ if (readfile and isfile and isfile(key_file)) then
   
   if sus and _keys[key:gsub('"', '')] then
     Notify('Key', 'Found saved key', 5)
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/muzscripter/projects/main/muz.community/intro.lua'))()
+   pcall(function() return loadstring(game:HttpGet(game_tables[game.PlaceId]))() end);
     
   else
     Notify('Key', 'No previous key found or old key isnt valid.', 5)
   end
   
   elseif _keys[settings.Key] then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/muzscripter/projects/main/muz.community/intro.lua'))()
+    pcall(function() return loadstring(game:HttpGet(game_tables[game.PlaceId]))() end);
   else
     Notify('Key', 'Wrong Key', 5)
 end
