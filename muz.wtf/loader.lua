@@ -1,5 +1,6 @@
 local supported_games = {
     [11468159863] = "https://scripts.luawl.com/11631/projectslayersv2.lua";
+    [6152116144] = "https://scripts.luawl.com/13428/projectslayersv1.lua";
 }
 
 if supported_games[game.PlaceId] then
