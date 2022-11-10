@@ -19,6 +19,7 @@ function Check()
     end
 end
 
+
 _G.Settings = {
     Position = nil
 }
@@ -28,6 +29,8 @@ if Check() then
 else
     print("Not supported")
 end
+
+makefolder("./xA1lt/")
 
 local fname = "./xA1lt/settings.dat"
 function load()
