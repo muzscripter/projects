@@ -38,6 +38,7 @@ function load()
         _G.Settings = game:GetService("HttpService"):JSONDecode(readfile(fname))
     end
 end
+
 function save()
     local json
     if Check() then
@@ -48,13 +49,19 @@ function save()
     end
 end
 
+_G.Settings = game:GetService("HttpService"):JSONDecode(readfile(fname))
+writefile(fname, json)
+
 load()
+task.wait()
 save()
+
 local function GetXY(GuiObject)
 	local Max, May = GuiObject.AbsoluteSize.X, GuiObject.AbsoluteSize.Y
 	local Px, Py = math.clamp(Mouse.X - GuiObject.AbsolutePosition.X, 0, Max), math.clamp(Mouse.Y - GuiObject.AbsolutePosition.Y, 0, May)
 	return Px/Max, Py/May
 end
+
 function CreateShadow(instance,color)
     local b_instance = Instance.new("ImageLabel")
     b_instance.ScaleType =Enum.ScaleType.Slice
