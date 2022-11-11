@@ -30,8 +30,6 @@ else
     print("Not supported")
 end
 
-makefolder("./xA1lt/")
-
 local fname = "./xA1lt/settings.dat"
 function load()
     if (Check() and isfile(fname)) then
@@ -48,11 +46,6 @@ function save()
         print("Not supported")
     end
 end
-
-pcall(function()
-_G.Settings = game:GetService("HttpService"):JSONDecode(readfile(fname))
-writefile(fname, json)
-end)
 
 load()
 task.wait()
