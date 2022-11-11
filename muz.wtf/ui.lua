@@ -140,7 +140,8 @@ local Shadow_3 = Instance.new("ImageLabel")
         motherFrame.Size = UDim2.new(0, 594,0, 420)
         motherFrame.AnchorPoint = Vector2.new(.5,.5)
       
-
+        DraggingEnabled(motherFrame)
+        
         one.CornerRadius = UDim.new(0, 5)
         one.Name = "one"
         one.Parent = motherFrame
