@@ -3,53 +3,8 @@ local CoreGui = game:GetService'CoreGui'
 local Library = {}
 local Mouse = game:GetService'Players'.LocalPlayer:GetMouse()
 
-udim2ToTable = function(udim2)
-    return {udim2.X.Scale, udim2.X.Offset, udim2.Y.Scale, udim2.Y.Offset}
-end
-
-udim2FromTable = function(udim2)
-    return UDim2.new(udim2[1], udim2[2], udim2[3], udim2[4])
-end
-
-function Check()
-    if writefile or appendfile or readfile or isfile or makefolder or delfolder or isfolder then
-        return true
-    else
-        return false
-    end
-end
 
 
-_G.Settings = {
-    Position = nil
-}
-
-if Check() then
-    makefolder("./xA1lt/")
-else
-    print("Not supported")
-end
-
-local fname = "./xA1lt/settings.dat"
-function load()
-    if (Check() and isfile(fname)) then
-        _G.Settings = game:GetService("HttpService"):JSONDecode(readfile(fname))
-    end
-end
-
-function save()
-    local json
-    if Check() then
-        json = game:GetService("HttpService"):JSONEncode(_G.Settings)
-        writefile(fname, json)
-    else
-        print("Not supported")
-    end
-end
-
-load()
-task.wait()
-save()
 
 local function GetXY(GuiObject)
 	local Max, May = GuiObject.AbsoluteSize.X, GuiObject.AbsoluteSize.Y
@@ -124,8 +79,6 @@ function DraggingEnabled(frame, parent)
         if input == dragInput and dragging then
             local delta = input.Position - mousePos
             parent.Position  = UDim2.new(framePos.X.Scale, framePos.X.Offset + delta.X, framePos.Y.Scale, framePos.Y.Offset + delta.Y)
-            _G.Settings.Position = udim2ToTable(parent.Position)
-            save()
         end
     end)
 end
@@ -183,15 +136,10 @@ local Shadow_3 = Instance.new("ImageLabel")
         motherFrame.Name = "motherFrame"
         motherFrame.Parent = Base
         motherFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-        motherFrame.Position = UDim2.new(0.19321394, 0, 0.362861991, 0)
+        motherFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
         motherFrame.Size = UDim2.new(0, 594,0, 420)
-
-        if SavePosition then 
-            motherFrame.Position = udim2FromTable(_G.Settings.Position)
-        else
-            motherFrame.Position = UDim2.new(0.5,0,.5,0)
-        end
-        DraggingEnabled(motherFrame)
+        motherFrame.AnchorPoint = Vector2.new(.5,.5)
+      
 
         one.CornerRadius = UDim.new(0, 5)
         one.Name = "one"
