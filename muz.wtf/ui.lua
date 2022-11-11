@@ -49,8 +49,10 @@ function save()
     end
 end
 
+pcall(function()
 _G.Settings = game:GetService("HttpService"):JSONDecode(readfile(fname))
 writefile(fname, json)
+end)
 
 load()
 task.wait()
