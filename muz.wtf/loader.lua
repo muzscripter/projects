@@ -1,7 +1,6 @@
-repeat wait() until game:IsLoaded() 
-    game:GetService("Players").LocalPlayer.Idled:connect(function()
-    game:GetService("VirtualUser"):ClickButton2(Vector2.new())
-end)
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
+    v:Disable()
+end
 
 local supported_games = {
     [11468159863] = "https://scripts.luawl.com/11631/projectslayersv2.lua";
