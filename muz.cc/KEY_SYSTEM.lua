@@ -1,12 +1,10 @@
 if assert(writefile) then getgenv().flags['settings']['write_file'] = true else game:GetService('Players').LocalPlayer:Kick('Your executor doesnt support "writefile()" ') end
 print('CHECK 1: PASSED')
 
-xpcall(function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/muzscripter/projects/main/muz.cc/GAMES_TABLE.lua'))()
-    print('Returned game tables.')
-end, function()
-    print('Failed to return GAMES_TABLE.')
-end)
+
+local GAME_HTTPS = loadstring(game:HttpGet('https://raw.githubusercontent.com/muzscripter/projects/main/muz.cc/GAMES_TABLE.lua'))()
+print('Returned game tables.')
+
 
 local KEYS = "MUZ.txt"
 local JSON;
@@ -50,3 +48,5 @@ if (readfile and isfile and isfile(KEYS)) then
   else
     print('CHECK 2: FAILED')
 end
+
+-- // join discord for key https://discord.gg/QBdvJ5QymP \\ --
