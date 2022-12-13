@@ -1,1 +1,3 @@
-print('Hello World')
+local GAMES = {
+  ['4483381587'] = ''
+}
