@@ -1,6 +1,6 @@
-# projects
+# INFORMATION
 
-Hello thank you for visting my GitHub.
+Hello, thanks for checking my GitHub in advance.
 
 This is my repository where I create personal projects and some of them might be open-sourced.
 
