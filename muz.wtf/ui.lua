@@ -91,7 +91,7 @@ function Library.DestroyUI()
 end
 function Library.Render(settings)
     settings = settings or {}
-    local Title = settings.Title or "<font color=\"rgb(255, 182, 193)\">MUZ</font>.WTF"
+    local Title = settings.Title or "<font color=\"rgb(114,150,164)\">MUZ</font>.WTF"
     local SavePosition = settings.SavePosition or false 
     local Options = settings.Options or {}
  
@@ -148,19 +148,19 @@ local Shadow_3 = Instance.new("ImageLabel")
 
         uiName.Name = "uiName"
         uiName.Parent = motherFrame
-        uiName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        uiName.BackgroundColor3 = Color3.fromRGB(205,222,229)
         uiName.BackgroundTransparency = 1.000
         uiName.Position = UDim2.new(0, 0, 0.0190476198, 0)
         uiName.Size = UDim2.new(1, 0, 0, 15)
         uiName.Font = Enum.Font.GothamMedium
         uiName.RichText = true
-        uiName.Text = "<font color=\"rgb(255, 182, 193)\">MUZ</font>.WTF"
+        uiName.Text = "<font color=\"rgb(114,150,164)\">MUZ</font>.WTF"
         uiName.TextColor3 = Color3.fromRGB(235, 235, 235)
         uiName.TextSize = 13.000
 
         Shadow.Name = "Shadow"
         Shadow.Parent = motherFrame
-        Shadow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Shadow.BackgroundColor3 = Color3.fromRGB(205,222,229)
         Shadow.BackgroundTransparency = 1.000
         Shadow.Position = UDim2.new(0, -15, 0, -15)
         Shadow.Size = UDim2.new(1, 30, 1, 30)
@@ -204,7 +204,7 @@ local Shadow_3 = Instance.new("ImageLabel")
 
             Shadow_4.Name = "Shadow"
             Shadow_4.Parent = DebugWindow
-            Shadow_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Shadow_4.BackgroundColor3 = Color3.fromRGB(205,222,229)
             Shadow_4.BackgroundTransparency = 1.000
             Shadow_4.Position = UDim2.new(0, -15, 0, -15)
             Shadow_4.Size = UDim2.new(1, 30, 1, 30)
@@ -219,7 +219,7 @@ local Shadow_3 = Instance.new("ImageLabel")
 
             NameOf_2.Name = "NameOf"
             NameOf_2.Parent = DebugWindow
-            NameOf_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            NameOf_2.BackgroundColor3 = Color3.fromRGB(205,222,229)
             NameOf_2.BackgroundTransparency = 1.000
             NameOf_2.Size = UDim2.new(1, 0, -0.190795302, 50)
             NameOf_2.Font = Enum.Font.Gotham
@@ -256,7 +256,7 @@ local Shadow_3 = Instance.new("ImageLabel")
 
             Shadow_22.Name = "Shadow"
             Shadow_22.Parent = Close
-            Shadow_22.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Shadow_22.BackgroundColor3 = Color3.fromRGB(205,222,229)
             Shadow_22.BackgroundTransparency = 1.000
             Shadow_22.Position = UDim2.new(0, -15, 0, -15)
             Shadow_22.Size = UDim2.new(1, 30, 1, 30)
@@ -346,7 +346,7 @@ local Shadow_3 = Instance.new("ImageLabel")
             TabList.Parent = TabContainer
             TabList.Active = true
             TabList.AnchorPoint = Vector2.new(0.5, 0.5)
-            TabList.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            TabList.BackgroundColor3 = Color3.fromRGB(205,222,229)
             TabList.BackgroundTransparency = 1.000
             TabList.BorderSizePixel = 0
             TabList.Position = UDim2.new(0.496356636, 0, 0.548028708, 0)
@@ -370,7 +370,7 @@ local Shadow_3 = Instance.new("ImageLabel")
 
             NameOf.Name = "NameOf"
             NameOf.Parent = TabContainer
-            NameOf.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            NameOf.BackgroundColor3 = Color3.fromRGB(205,222,229)
             NameOf.BackgroundTransparency = 1.000
             NameOf.Size = UDim2.new(1, 0, -0.0407953188, 50)
             NameOf.Font = Enum.Font.Gotham
@@ -389,7 +389,7 @@ local Shadow_3 = Instance.new("ImageLabel")
 
             Shadow_2.Name = "Shadow"
             Shadow_2.Parent = TabContainer
-            Shadow_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Shadow_2.BackgroundColor3 = Color3.fromRGB(205,222,229)
             Shadow_2.BackgroundTransparency = 1.000
             Shadow_2.Position = UDim2.new(0, -15, 0, -15)
             Shadow_2.Size = UDim2.new(1, 30, 1, 30)
@@ -442,7 +442,7 @@ local Shadow_3 = Instance.new("ImageLabel")
           
                         Tab.Name = "Tab"
             Tab.Parent = TabList
-            Tab.BackgroundColor3 = Color3.fromRGB(255, 182, 193)
+            Tab.BackgroundColor3 = Color3.fromRGB(230, 240, 242)
             Tab.BackgroundTransparency = 1
             Tab.Position = UDim2.new(0.0686274543, 0, 0, 0)
             Tab.Size = UDim2.new(0, 132, 0, 28)
@@ -460,12 +460,12 @@ local Shadow_3 = Instance.new("ImageLabel")
 
             Shadow_3.Name = "Shadow"
             Shadow_3.Parent = Tab
-            Shadow_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Shadow_3.BackgroundColor3 = Color3.fromRGB(205,222,229)
             Shadow_3.BackgroundTransparency = 1.000
             Shadow_3.Position = UDim2.new(0, -15, 0, -15)
             Shadow_3.Size = UDim2.new(1, 30, 1, 30)
             Shadow_3.Image = "rbxassetid://5554236805"
-            Shadow_3.ImageColor3 = Color3.fromRGB(255, 182, 193)
+            Shadow_3.ImageColor3 = Color3.fromRGB(230, 240, 242)
             Shadow_3.ImageTransparency = 1.000
             Shadow_3.ScaleType = Enum.ScaleType.Slice
             Shadow_3.SliceCenter = Rect.new(23, 23, 277, 277)
@@ -474,7 +474,7 @@ local Shadow_3 = Instance.new("ImageLabel")
             Page.Name = "Page"
             Page.Parent = Pages
             Page.Active = true
-            Page.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Page.BackgroundColor3 = Color3.fromRGB(205,222,229)
             Page.BackgroundTransparency = 1.000
             Page.BorderSizePixel = 0
             Page.Position = UDim2.new(-0.00168350164, 0, 0.0761904791, 0)
@@ -483,7 +483,7 @@ local Shadow_3 = Instance.new("ImageLabel")
             Page.Name = "Page"
             Page.Parent = Pages
             Page.Active = true
-            Page.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Page.BackgroundColor3 = Color3.fromRGB(205,222,229)
             Page.BackgroundTransparency = 1.000
             Page.BorderSizePixel = 0
             Page.Position = UDim2.new(-0.00168350164, 0, 0.0761904791, 0)
@@ -565,7 +565,7 @@ local Shadow_3 = Instance.new("ImageLabel")
 
             NameOf.Name = "NameOf"
             NameOf.Parent = Section
-            NameOf.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            NameOf.BackgroundColor3 = Color3.fromRGB(205,222,229)
             NameOf.BackgroundTransparency = 1.000
             NameOf.Size = UDim2.new(0, 570, 0, 22)
             NameOf.Font = Enum.Font.Gotham
@@ -613,7 +613,7 @@ local Shadow_3 = Instance.new("ImageLabel")
             
             Stroke.Parent = ButtonElement
             Stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-            Stroke.Color = Color3.fromRGB(255,182,193)
+            Stroke.Color = Color3.fromRGB(114,150,164)
             Stroke.LineJoinMode = Enum.LineJoinMode.Round
             Stroke.Thickness = .6
             Stroke.Transparency = 1 
@@ -628,7 +628,7 @@ local Shadow_3 = Instance.new("ImageLabel")
                 pcall(function()
                     Callback()
                 end)
-                CircleAnim(ButtonElement,Color3.fromRGB(255,182,193),Color3.fromRGB(55,55,55))
+                CircleAnim(ButtonElement,Color3.fromRGB(114,150,164),Color3.fromRGB(55,55,55))
             end)
             end
 
@@ -669,7 +669,7 @@ local Shadow_3 = Instance.new("ImageLabel")
 
             Title.Name = "Title"
             Title.Parent = Dropdown
-            Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Title.BackgroundColor3 = Color3.fromRGB(205,222,229)
             Title.BackgroundTransparency = 1.000
             Title.Position = UDim2.new(-0.336874843, 0, 0, 0)
             Title.Size = UDim2.new(0, 555, 0, 30)
@@ -723,7 +723,7 @@ local Shadow_3 = Instance.new("ImageLabel")
 
                 Stroke.Parent = dropItem
             Stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-            Stroke.Color = Color3.fromRGB(255,182,193)
+            Stroke.Color = Color3.fromRGB(114,150,164)
             Stroke.LineJoinMode = Enum.LineJoinMode.Round
             Stroke.Thickness = .6
             Stroke.Transparency = 1 
@@ -795,7 +795,7 @@ local Shadow_3 = Instance.new("ImageLabel")
 
                 ToggleButton.Name = "ToggleButton"
                 ToggleButton.Parent = Toggle
-                ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                ToggleButton.BackgroundColor3 = Color3.fromRGB(205,222,229)
                 ToggleButton.BackgroundTransparency = 1.000
                 ToggleButton.Size = UDim2.new(1, 0, 1, 0)
                 ToggleButton.Font = Enum.Font.SourceSans
@@ -816,12 +816,12 @@ local Shadow_3 = Instance.new("ImageLabel")
 
                 Shadow.Name = "Shadow"
                 Shadow.Parent = Tracker
-                Shadow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                Shadow.BackgroundColor3 = Color3.fromRGB(205,222,229)
                 Shadow.BackgroundTransparency = 1.000
                 Shadow.Position = UDim2.new(0, -15, 0, -15)
                 Shadow.Size = UDim2.new(1, 30, 1, 30)
                 Shadow.Image = "rbxassetid://5554236805"
-                Shadow.ImageColor3 = Color3.fromRGB(255, 182, 193)
+                Shadow.ImageColor3 = Color3.fromRGB(230, 240, 242)
                 Shadow.ScaleType = Enum.ScaleType.Slice
                 Shadow.SliceCenter = Rect.new(23, 23, 277, 277)
 
@@ -840,7 +840,7 @@ local Shadow_3 = Instance.new("ImageLabel")
 
                 Title.Name = "Title"
                 Title.Parent = Toggle
-                Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                Title.BackgroundColor3 = Color3.fromRGB(205,222,229)
                 Title.BackgroundTransparency = 1.000
                 Title.Size = UDim2.new(0, 555, 0, 30)
                 Title.Font = Enum.Font.Gotham
@@ -862,7 +862,7 @@ local Shadow_3 = Instance.new("ImageLabel")
                 if TDefault then
                     pcall(Callback, State)
                     check.Rotation = 0 
-                    Tracker.BackgroundColor3 = Color3.fromRGB(255,182,193)
+                    Tracker.BackgroundColor3 = Color3.fromRGB(114,150,164)
                     Shadow.ImageTransparency = 0
                         State = true
                     else
@@ -876,7 +876,7 @@ local Shadow_3 = Instance.new("ImageLabel")
                             State = not State
                             pcall(Callback, State)
         
-                            local NewColour = State and Color3.fromRGB(255,182,193)  or Color3.fromRGB(40,40,40) 
+                            local NewColour = State and Color3.fromRGB(114,150,164)  or Color3.fromRGB(40,40,40) 
                             local NewTrans = State and 0 or 90 
                             local NewImage  = State and 0 or 1 
                             TweenService:Create(Shadow,TweenInfo.new(.25), { ImageTransparency = NewImage }):Play()
@@ -930,7 +930,7 @@ local Shadow_3 = Instance.new("ImageLabel")
 
             Title.Name = "Title"
             Title.Parent = Slider
-            Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Title.BackgroundColor3 = Color3.fromRGB(205,222,229)
             Title.BackgroundTransparency = 1.000
             Title.Size = UDim2.new(0, 555, 0, 30)
             Title.Font = Enum.Font.Gotham
@@ -957,7 +957,7 @@ local Shadow_3 = Instance.new("ImageLabel")
 
             bar.Name = "bar"
             bar.Parent = SliderButton
-            bar.BackgroundColor3 = Color3.fromRGB(255, 182, 193)
+            bar.BackgroundColor3 = Color3.fromRGB(230, 240, 242)
             bar.BorderColor3 = Color3.fromRGB(30, 30, 30)
             bar.Size = UDim2.fromScale(DefaultScale,1)
 
@@ -966,7 +966,7 @@ local Shadow_3 = Instance.new("ImageLabel")
             Int.Name = "Int"
             Int.Parent = Slider
             Int.Active = false
-            Int.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Int.BackgroundColor3 = Color3.fromRGB(205,222,229)
             Int.BackgroundTransparency = 1.000
             Int.Position = UDim2.new(0.699099123, 0, 0, 0)
             Int.Selectable = false
@@ -1046,7 +1046,7 @@ local Shadow_3 = Instance.new("ImageLabel")
 
                 Title.Name = "Title"
                 Title.Parent = Label
-                Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                Title.BackgroundColor3 = Color3.fromRGB(205,222,229)
                 Title.BackgroundTransparency = 1.000
                 Title.Position = UDim2.new(0, 0, 0.102564104, 0)
                 Title.Size = UDim2.new(0, 555, 0, 30)
@@ -1100,7 +1100,7 @@ local Shadow_3 = Instance.new("ImageLabel")
     
                 Title.Name = "Title"
                 Title.Parent = Dropdown
-                Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                Title.BackgroundColor3 = Color3.fromRGB(205,222,229)
                 Title.BackgroundTransparency = 1.000
                 Title.Position = UDim2.new(-0.336874843, 0, 0, 0)
                 Title.Size = UDim2.new(0, 555, 0, 30)
@@ -1154,7 +1154,7 @@ local Shadow_3 = Instance.new("ImageLabel")
     
                     Stroke.Parent = dropItem
                     Stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-                    Stroke.Color = Color3.fromRGB(255,182,193)
+                    Stroke.Color = Color3.fromRGB(114,150,164)
                     Stroke.LineJoinMode = Enum.LineJoinMode.Round
                     Stroke.Thickness = .6
                     Stroke.Transparency = 1
@@ -1254,7 +1254,7 @@ local Shadow_3 = Instance.new("ImageLabel")
 
             ToggleButton.Name = "ToggleButton"
             ToggleButton.Parent = TextField
-            ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            ToggleButton.BackgroundColor3 = Color3.fromRGB(205,222,229)
             ToggleButton.BackgroundTransparency = 1.000
             ToggleButton.Size = UDim2.new(1, 0, 1, 0)
             ToggleButton.Font = Enum.Font.SourceSans
@@ -1264,7 +1264,7 @@ local Shadow_3 = Instance.new("ImageLabel")
 
             Title.Name = "Title"
             Title.Parent = TextField
-            Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Title.BackgroundColor3 = Color3.fromRGB(205,222,229)
             Title.BackgroundTransparency = 1.000
             Title.Size = UDim2.new(0, 555, 0, 30)
             Title.Font = Enum.Font.Gotham
@@ -1299,7 +1299,7 @@ local Shadow_3 = Instance.new("ImageLabel")
 
             Stroke.Parent = Input
             Stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-            Stroke.Color = Color3.fromRGB(255,182,193)
+            Stroke.Color = Color3.fromRGB(114,150,164)
             Stroke.LineJoinMode = Enum.LineJoinMode.Round
             Stroke.Thickness = .6
             Stroke.Transparency = 1 
@@ -1354,7 +1354,7 @@ local Shadow_3 = Instance.new("ImageLabel")
 
             Title.Name = "Title"
             Title.Parent = Keybind
-            Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Title.BackgroundColor3 = Color3.fromRGB(205,222,229)
             Title.BackgroundTransparency = 1.000
             Title.Size = UDim2.new(0, 555, 0, 30)
             Title.Font = Enum.Font.Gotham
@@ -1381,7 +1381,7 @@ local Shadow_3 = Instance.new("ImageLabel")
 
             Stroke.Parent = Input
             Stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-            Stroke.Color = Color3.fromRGB(255,182,193)
+            Stroke.Color = Color3.fromRGB(114,150,164)
             Stroke.LineJoinMode = Enum.LineJoinMode.Round
             Stroke.Thickness = .6
             Stroke.Transparency = 1 
@@ -1428,4 +1428,5 @@ local Shadow_3 = Instance.new("ImageLabel")
         end
         return Tabs
 end
+
 return Library
