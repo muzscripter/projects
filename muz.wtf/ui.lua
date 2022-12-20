@@ -1326,6 +1326,75 @@ local Shadow_3 = Instance.new("ImageLabel")
                 TweenService:Create(Stroke,TweenInfo.new(.2), { Transparency = 1 }):Play()
             end)
         end
+
+        function Elements:Paragraph(settings)
+            settings = settings or {}
+            local Title = settings.Title or "New Paragraph"
+            local Content = settings.Content or "New Content"
+            local ParagraphFunctions = {}
+
+
+            local Paragraph = Instance.new("Frame")
+            local UICorner = Instance.new("UICorner")
+            local Top = Instance.new("TextLabel")
+            local Bottom = Instance.new("TextLabel")
+            local padding1 = Instance.new("UIPadding")
+            local padding2 = Instance.new("UIPadding")
+
+           
+            Paragraph.Name = "Paragraph"
+            Paragraph.Parent = Section
+            Paragraph.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+            Paragraph.Position = UDim2.new(0.0131578948, 0, 0.735849082, 0)
+            Paragraph.Size = UDim2.new(0, 555, 0, 39)
+
+            UICorner.CornerRadius = UDim.new(0, 3)
+            UICorner.Parent = Paragraph
+
+            Top.Name = "Top"
+            Top.Parent = Paragraph
+            Top.BackgroundColor3 = Color3.fromRGB(205,222,229)
+            Top.BackgroundTransparency = 1.000
+            Top.Position = UDim2.new(0, 0,0.103, 0)
+            Top.Size = UDim2.new(0, 555, 0, 39)
+            Top.Font = Enum.Font.GothamMedium
+            Top.Text = Title
+            Top.TextColor3 = Color3.fromRGB(255, 255, 255)
+            Top.BorderSizePixel = 0
+            Top.TextSize = 14.000
+            Top.TextXAlignment = Enum.TextXAlignment.Left
+            Top.TextYAlignment = Enum.TextYAlignment.Top
+            
+            padding1.Parent = Top
+            padding1.PaddingLeft = UDim.new(0, 5)
+            
+            Bottom.Name = "Bottom"
+            Bottom.Parent = Paragraph
+            Bottom.BackgroundColor3 = Color3.fromRGB(205,222,229)
+            Bottom.BackgroundTransparency = 1.000
+            Bottom.Position = UDim2.new(0, 0,0.103, 0)
+            Bottom.Size = UDim2.new(0, 555, 0, 39)
+            Bottom.Font = Enum.Font.Gotham
+            Bottom.Text = Content
+            Bottom.BorderSizePixel = 0
+            Bottom.TextColor3 = Color3.fromRGB(112, 112, 112)
+            Bottom.TextSize = 12.000
+            Bottom.TextXAlignment = Enum.TextXAlignment.Left
+            Bottom.TextYAlignment = Enum.TextYAlignment.Bottom
+            
+            padding2.Parent = Bottom
+            padding2.PaddingLeft = UDim.new(0, 5)
+            padding2.PaddingBottom = UDim.new(0, 9)
+                function ParagraphFunctions:SetText(settings)
+                settings = settings or {}
+                local Tt = settings.Title or "nil"
+                local Tc = settings.Content or "nil"
+                Top.Text = Tt
+                Bottom.Text = Tc
+                end
+            return ParagraphFunctions
+        end
+        
         function Elements:Keybind(settings)
             settings = settings or {}
             local T = settings.Title or {}
