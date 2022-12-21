@@ -432,7 +432,7 @@ local Shadow_3 = Instance.new("ImageLabel")
         function Tabs:Tab(settings)
             settings = settings or {}
             local Title = settings.Title or "New Tab"
-            local Icon = settings.Icon or tostring('rbxassetid://11868924970')
+            local Icon = settings.Icon or "rbxassetid://11868924970"
 
             local Tab = Instance.new("TextButton")
             local UICorner = Instance.new("UICorner")
@@ -440,7 +440,7 @@ local Shadow_3 = Instance.new("ImageLabel")
             local Page = Instance.new("ScrollingFrame")
             local UIListLayout = Instance.new("UIListLayout")
             local UIPadding = Instance.new("UIPadding")
-          
+            local ImageLabel = Instance.new('ImageLabel')
                         Tab.Name = "Tab"
             Tab.Parent = TabList
             Tab.BackgroundColor3 = Color3.fromRGB(230, 240, 242)
