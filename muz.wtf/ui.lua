@@ -432,6 +432,7 @@ local Shadow_3 = Instance.new("ImageLabel")
         function Tabs:Tab(settings)
             settings = settings or {}
             local Title = settings.Title or "New Tab"
+            local Icon = settings.Icon or tostring('rbxassetid://11868924970')
 
             local Tab = Instance.new("TextButton")
             local UICorner = Instance.new("UICorner")
@@ -457,6 +458,16 @@ local Shadow_3 = Instance.new("ImageLabel")
 
             UICorner.CornerRadius = UDim.new(0, 4)
             UICorner.Parent = Tab
+
+            ImageLabel.Name = "Icon"
+            ImageLabel.Parent = Tab
+            ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            ImageLabel.BackgroundTransparency = 1.000
+            ImageLabel.ImageColor3 = Color3.fromRGB(230,230,230)
+            ImageLabel.Position = UDim2.new(0, 2,0.143, 0)
+            ImageLabel.Size = UDim2.new(0, 20,0, 20)
+            ImageLabel.Image = Icon
+            ImageLabel.ImageTransparency = 0 
 
             Shadow_3.Name = "Shadow"
             Shadow_3.Parent = Tab
@@ -533,6 +544,14 @@ local Shadow_3 = Instance.new("ImageLabel")
                     end
                     TweenService:Create(Tab, tw, { BackgroundTransparency = 0, TextColor3 = Color3.fromRGB(0,0,0) }):Play()
                 end
+
+                for i,v in next, TabList:GetDescendants() do
+                    if v:IsA("ImageLabel") then
+                        TweenService:Create(v, tw, { BackgroundTransparency = 1, ImageColor3 = Color3.fromRGB(255,255,255)}):Play()
+                    end
+                    TweenService:Create(ImageLabel, tw, { BackgroundTransparency = 1, ImageColor3 = Color3.fromRGB(0,0,0) }):Play()
+                end
+
                 for i,v in next, Pages:GetChildren() do
                     v.Visible = false
                 end
