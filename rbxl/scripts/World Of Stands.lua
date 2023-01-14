@@ -10,9 +10,6 @@ local Flags = {}
 local Tick = clonefunction(tick)
 local Start = Tick()
 local Network = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
-local Success, Response = pcall(function()
-    Network:Teleport(game.PlaceId)
-end)
 
 task.spawn(function()
     while true do task.wait()
@@ -38,12 +35,10 @@ task.spawn(function()
         end
         
         
-        task.wait(30)
+        task.wait(10)
         
-        if Success then
-            Network:Teleport(game.PlaceId)
-        end
+        Network:Teleport(game.PlaceId)
         
-        syn.queue_on_teleport(print('Hello World'))
+        syn.queue_on_teleport(loadstring(game:HttpGet('https://raw.githubusercontent.com/muzscripter/projects/main/rbxl/scripts/World%20Of%20Stands.lua'))())
     end
 end)
